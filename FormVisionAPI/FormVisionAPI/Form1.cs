@@ -43,7 +43,7 @@ namespace FormVisionAPI
             if (File.Exists(textBox1.Text) == true)
             {
                 pictureBox1.Image = System.Drawing.Image.FromFile(textBox1.Text);
-
+                richTextBox1.Text = "";
                 var client = ImageAnnotatorClient.Create();
                 var image = Google.Cloud.Vision.V1.Image.FromFile(textBox1.Text);
                 var response = client.DetectLabels(image);
@@ -52,6 +52,10 @@ namespace FormVisionAPI
                 {
                     richTextBox1.Text += (label.i + 1).ToString() + ". " + label.v.Description + "\n";
                 }
+            }
+            else
+            {
+                pictureBox1.Image = System.Drawing.Image.FromFile(@"C:\Users\ryuse\source\repos\FormVisionAPI\FormVisionAPI\FormVisionAPI\NOIMAGE.png");
             }
         }
     }
