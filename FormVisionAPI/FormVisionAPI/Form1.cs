@@ -56,6 +56,7 @@ namespace FormVisionAPI
             else
             {
                 pictureBox1.Image = System.Drawing.Image.FromFile(@"C:\Users\ryuse\source\repos\FormVisionAPI\FormVisionAPI\FormVisionAPI\NOIMAGE.png");
+                richTextBox1.Text = "";
             }
         }
     }
